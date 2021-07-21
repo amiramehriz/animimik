@@ -64,11 +64,12 @@ def upload_file():
     return render_template("output.html",originalURL = vidpath, outputURL="static/output/output.mp4" )
 
 
-@app.route("/downloadcheckpoint"):
+@app.route("/downloadcheckpoint")
+def download_checkpoint():
     file_id = '1RsNHAynydSeVQbtsfNIbe1V8LoKFsAtW'
     destination = 'checkpoint.pth.tar'
     download_file_from_google_drive(file_id, destination)
-    return render_template("uploaded.html" )
+    return render_template("chkptupladed.html" )
 
 @app.route("/ThankYou", methods=["POST"])
 def take_rating():
