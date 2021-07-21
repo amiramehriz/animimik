@@ -1,0 +1,314 @@
+*{
+  opacity: 1;
+  transition: all 500ms linear;
+  overflow: hidden;
+}
+
+body {
+    font-family: verdana;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-image: url('blue.jpg');
+    background-size: cover;
+  }
+
+body:before {
+    content: "";
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    background-color: rgba(27, 18, 43, 0.836);
+}
+
+  form {
+    color: white;
+    text-align: center;
+  }
+
+  #logo{
+    width : 30%;
+    height: auto;
+    float: left;
+  }
+
+  .team-name{
+    color: aliceblue;
+    padding-top: 10%;
+    /* padding-bottom: 8.5%; */
+    padding-left: 8%;
+    font-size: 8.5vh;
+  }
+
+  .proj-info{
+    color: aliceblue;
+    /* padding-top: 12%; */
+    /* padding-bottom: 8.5%; */
+    font-size: 3vh;
+    padding-left: 2%;
+  }
+
+  #image{
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
+  #video{
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
+  .label {
+    font-weight: bold;
+    color:rgb(217, 217, 228);
+    font-family: verdana;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .hide-rdbtn{
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .btn-global{
+    background-color: white;
+    border-radius: 22px;
+    /* padding: 12px 20px; */
+    width: 140px;
+    height: 45px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 2vh;
+    /* font-family:inherit; */
+    color: rgb(29, 29, 77);
+    /* transition: background-color 300ms linear; */
+    /* margin: 12%; */
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    outline: none;
+  }
+
+  .btn-global:hover{
+    background-color: rgb(198, 209, 233);
+    /* transition: background-color 300ms linear; */
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+
+  .wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #form{
+  width: 100%;
+
+  }
+
+  .intro-container{
+    /* row */
+    content: "";
+    display: table;
+    clear: both;
+    height: 30%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 5% 10% 4% 20%;
+    /* top, right, bottom, left */
+  }
+
+  .wizard{
+    /* row */
+    content: "";
+    display: table;
+    clear: both;
+    padding: 0% 10% 0% 10%;
+  }
+
+  .result-container{
+    padding: 0% 25% 0% 25%;
+    margin-top: -3%;
+  }
+
+  .rate-container{
+    padding: 0% 38% 0% 38%;
+  }
+
+  .rate-box{
+    background-color: rgba(33, 108, 173, 0.616);
+    border-radius: 60px;
+    padding: 20px;
+    text-align: center;
+    font-size: 2.5vh; 
+    margin-top: 0; 
+    width: 30%; 
+    height: 7.9vh; 
+    margin-left: 10%; 
+  }
+
+  #first-rate{
+    margin-left: 300px;
+  }
+
+  .rad-container{
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Hide the browser's default radio button */
+.rad-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.rad-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.rad-container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.rad-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.rad-container .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+  .vid-result{
+    padding: 20px;
+  }
+
+  .pic-container{
+    /* column */
+    float: left;
+    width: 90%;
+    padding: 10px;
+    height: 100px;
+    display:inline-block;
+    display: flex;
+  }
+
+  .vid-container{
+    /* column */
+    float: left;
+    width: 90%;
+    padding: 10px;
+    height: 100px;
+    display:inline-block;
+    display: flex;
+  }
+
+  .row {
+    display: flex;
+
+  }
+
+  .column {
+    flex: 33.33%;
+    padding: 5px;
+
+  }
+
+  label {
+    cursor: pointer;
+    /* Style as you please, it will become the visible UI component. */
+ }
+
+ /* for tablets and mobiles */
+@media screen and (max-width: 768px) {
+  *{
+    overflow: scroll;
+    overflow-x:hidden;
+  }
+
+  .intro-container {
+      width: 100%;
+      align-items: left;
+      height: 20%;
+  }
+
+  .proj-info{
+    width: 90vw;
+    margin-bottom: 0;
+    margin-right: 20vw;
+  }
+
+  .result-container{
+    height: 35%;
+    padding: 10%;
+    margin: 0;
+  }
+
+  .pic-container{
+    height: 45%;
+  }
+
+  .vid-result{
+    height: 180px;
+    width: 240px;
+  }
+
+  .rate-box{
+    width: 80vw;
+  }
+
+  #first-rate{
+    margin-left: 0px;
+  }
+
+  .warp{
+    width: 20vw;
+  }
+}
