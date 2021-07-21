@@ -35,5 +35,5 @@ jobs:
       with:
         app-name: 'animimik'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_3670d38ccc8947b392c447520099e250 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_2d50a1891d444b67b54671a234efab86 }}
         package: '.\app.zip'
