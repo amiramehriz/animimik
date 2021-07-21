@@ -1,6 +1,5 @@
 from flask import Flask, redirect, render_template, request, session
 #from demo import main
-from flask_sqlalchemy import SQLAlchemy
 
 name="app"
 # Configure application
@@ -8,21 +7,6 @@ app = Flask(name)
 
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
-
-# SQL alchemy configuration
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
-db = SQLAlchemy(app)
-
-class Rating(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    rating = db.Column(db.Integer, unique=False, nullable=False)
-
-    def __repr__(self):
-        return str(self.rating)
-
-db.create_all()
-
-
 
 # Ensure responses aren't cached
 @app.after_request
@@ -93,11 +77,11 @@ def take_rating():
         score=4
     elif rating_score == "rate5":
         score=5
+    
+    with open('ratings.txt', 'a') as f:
+        f.write(str(score))
+        f.write('\n')
 
-    rating_ = Rating(rating = score)
-    db.session.add(rating_)
 
-    db.session.commit()
-
-    current_rating_ = Rating.query.all() # hhhh sorry
-    return render_template("thankyou.html", current_rating = current_rating_)
+    
+    return render_template("thankyou.html")
