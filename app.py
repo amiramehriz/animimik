@@ -1,6 +1,5 @@
 from flask import Flask, redirect, render_template, request, session
 from demo import main
-from downloaddrive import download_file_from_google_drive
 
 name="app"
 # Configure application
@@ -58,17 +57,12 @@ def upload_file():
         vidpath = "static/input/" +uploaded_video.filename
 
     main(config = 'config/vox-256.yaml', driving_video = vidpath,
-    source_image = imgpath, checkpoint = 'checkpoint.pth.tar',
+    source_image = imgpath, checkpoint = '00000091-checkpoint.pth.tar',
     result_video = 'static/output/output.mp4' , cpu=True)
 
     return render_template("output.html",originalURL = vidpath, outputURL="static/output/output.mp4" )
 
 
-@app.route("/downloadcheckpoint"):
-    file_id = '1RsNHAynydSeVQbtsfNIbe1V8LoKFsAtW'
-    destination = 'checkpoint.pth.tar'
-    download_file_from_google_drive(file_id, destination)
-    return render_template("uploaded.html" )
 
 @app.route("/ThankYou", methods=["POST"])
 def take_rating():
