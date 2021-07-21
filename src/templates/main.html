@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="/static/styles.css" rel="stylesheet">
+
+  <title>Animimik</title>
+
+</head>
+
+<body>
+
+  <div class="intro-container" style="height: 10%;">
+    <img id="logo" src="static/logo.png" alt="logo" style="width: 20%;">
+
+    <div class="team-name" style="padding-top: 5%; font-size: 6.5vh;">Animimik</div>
+    <div class="proj-info" style="font-size: 2vh;">
+      <p style="font-size: 2.5vh;">
+      It does not matter how slowly you go, as long as you do not stop.
+      </p>
+      <p>
+      Let your picture moves through our application!
+      </p>
+    </div>
+  </div>
+
+  <div class="wizard">
+
+    <form id="form" action ="/uploaded_page" method="POST" name = "form" enctype="multipart/form-data">
+
+      <div class="pic-container">
+
+        <div class="row">
+        <label class="label" for="image">Upload image</label>
+        <input type="file" id="image" name="image" />
+
+
+
+          <div class="column">
+            <img height="100px" class="img" src="static/img1.png" alt="image">
+            <input type="radio" name="img_options" id="img1" value="img1" class=""></input>
+            </div>
+          <div class="column">
+            <img height="100px" class="img" src="static/img2.png" alt="image">
+            <input type="radio" name="img_options" id="img2" value="img2" class=""></input>
+            </div>
+          <div class="column">
+            <img height="100px" class="img" src="static/img3.png" alt="image">
+            <input type="radio" name="img_options" id="img3" value="img3" class=""></input>
+            </div>
+
+        </div>
+
+
+      </div>
+
+      <div class="vid-container">
+
+        <div class="row">
+          <label class="label" for="video">Upload video</label>
+          <br>
+          <input type="file" id="video" name="video" />
+
+
+          <div class="column">
+            <video height="100px" id="vid" controls autoplay>
+              <source src="static/1.mp4">
+                Your browser does not support the video tag.
+              </video>
+              <input type="radio" name="vid_options" id="vid1" value="vid1" class=""></input>
+              </div>
+
+        <div class="column">
+          <video height="100px" id="vid" controls autoplay>
+            <source src="static/3.mp4">
+              Your browser does not support the video tag.
+          </video>
+          <input type="radio" name="vid_options" id="vid2" value="vid2" class=""></input>
+          </div>
+
+        <div class="column">
+        <video height="100px" id="vid" controls autoplay>
+          <source src="static/4.mp4">
+            Your browser does not support the video tag.
+        </video>
+        <input type="radio" name="vid_options" id="vid3" value="vid3" class=""></input>
+        </div>
+
+        </div>
+
+
+      </div>
+
+      <div class="warp">
+        <input id="upload_button" type = "submit" class = "btn btn-primary btn-global" value ="Next" style="margin: 20%; width: 70px;" />
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
