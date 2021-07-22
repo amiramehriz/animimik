@@ -1,9 +1,10 @@
 from flask import Flask, redirect, render_template, request, session
 from downloaddrive import download_file_from_google_drive
-from downloadtorch import downloadtorch
-from pipinstall import  pipinstall
-pipinstall("torch==1.7.1")
-pipinstall("torchvision==0.8.2")
+
+# from downloadtorch import downloadtorch
+# from pipinstall import  pipinstall
+# pipinstall("torch==1.7.1")
+# pipinstall("torchvision==0.8.2")
 
 from demo import main
 
