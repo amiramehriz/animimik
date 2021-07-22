@@ -8,5 +8,3 @@ imageio-ffmpeg
 tqdm
 pandas
 requests
-torchaudio==0.7.2
-torchvision==0.8.2
