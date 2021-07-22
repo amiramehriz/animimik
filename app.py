@@ -1,5 +1,5 @@
 from flask import Flask, redirect, render_template, request, session
-from demo import main
+#from demo import main
 from downloaddrive import download_file_from_google_drive
 
 name="app"
@@ -57,9 +57,7 @@ def upload_file():
         uploaded_video.save("static/input/" + uploaded_video.filename)
         vidpath = "static/input/" +uploaded_video.filename
 
-    main(config = 'config/vox-256.yaml', driving_video = vidpath,
-    source_image = imgpath, checkpoint = 'checkpoint.pth.tar',
-    result_video = 'static/output/output.mp4' , cpu=True)
+    #main(config = 'config/vox-256.yaml', driving_video = vidpath, source_image = imgpath, checkpoint = 'checkpoint.pth.tar', result_video = 'static/output/output.mp4' , cpu=True)
 
     return render_template("output.html",originalURL = vidpath, outputURL="static/output/output.mp4" )
 
