@@ -4,3 +4,4 @@ __pycache__
 
 # files
 checkpoint.pth.tar
+ratings.txt
