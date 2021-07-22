@@ -1,15 +1,8 @@
 from flask import Flask, redirect, render_template, request, session
 from downloaddrive import download_file_from_google_drive
 from downloadtorch import downloadtorch
-
-try:
-    with open("torch-1.7.1-cp37-cp37m-manylinux1_x86_64.whl", 'rb'):
-        print("opened")
-except:
-    downloadtorch()
-    print("error")
 from pipinstall import  pipinstall
-pipinstall("torch-1.7.1-cp37-cp37m-manylinux1_x86_64.whl")
+pipinstall("torch==1.7.1")
 pipinstall("torchvision==0.8.2")
 
 from demo import main
