@@ -1,6 +1,18 @@
 from flask import Flask, redirect, render_template, request, session
-#from demo import main
 from downloaddrive import download_file_from_google_drive
+from downloadtorch import downloadtorch
+
+try:
+    with open("torch-1.7.1-cp37-cp37m-manylinux1_x86_64.whl", 'rb'):
+        print("opened")
+except:
+    downloadtorch()
+    print("error")
+from pipinstall import  pipinstall
+pipinstall("torch-1.7.1-cp37-cp37m-manylinux1_x86_64.whl")
+pipinstall("torchvision==0.8.2")
+
+from demo import main
 
 name="app"
 # Configure application
@@ -16,7 +28,6 @@ def after_request(response):
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
     return response
-
 
 @app.route("/", methods=['GET'])
 def index():
@@ -57,7 +68,7 @@ def upload_file():
         uploaded_video.save("static/input/" + uploaded_video.filename)
         vidpath = "static/input/" +uploaded_video.filename
 
-    #main(config = 'config/vox-256.yaml', driving_video = vidpath, source_image = imgpath, checkpoint = 'checkpoint.pth.tar', result_video = 'static/output/output.mp4' , cpu=True)
+    main(config = 'config/vox-256.yaml', driving_video = vidpath, source_image = imgpath, checkpoint = 'checkpoint.pth.tar', result_video = 'static/output/output.mp4' , cpu=True)
 
     return render_template("output.html",originalURL = vidpath, outputURL="static/output/output.mp4" )
 
