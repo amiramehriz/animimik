@@ -84,11 +84,9 @@ def take_rating():
         score=4
     elif rating_score == "rate5":
         score=5
-    
+
     with open('ratings.txt', 'a') as f:
         f.write(str(score))
         f.write('\n')
 
-
-    
     return render_template("thankyou.html")
